@@ -64,7 +64,6 @@ def invoice():
             <input type="submit" value="兌獎">
         </form>
         <p>{{ result }}</p>
-        <a href="/">回首頁</a>
     ''', result=result)
 
 if __name__ == '__main__':
