@@ -4,11 +4,7 @@ from bs4 import BeautifulSoup
 
 app = Flask(__name__)
 
-@app.route('/')
-def home():
-    return '<a href="/invoice">點我兌獎</a>'
-
-@app.route('/invoice', methods=['GET', 'POST'])
+@app.route('/', methods=['GET', 'POST'])
 def invoice():
     result = ""
     if request.method == 'POST':
@@ -68,7 +64,6 @@ def invoice():
             <input type="submit" value="兌獎">
         </form>
         <p>{{ result }}</p>
-        <a href="/">回首頁</a>
     ''', result=result)
 
 if __name__ == '__main__':
