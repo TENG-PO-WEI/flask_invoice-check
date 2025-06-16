@@ -64,6 +64,7 @@ def invoice():
             <input type="submit" value="兌獎">
         </form>
         <p>{{ result }}</p>
+        <a href="https://invoice.etax.nat.gov.tw/index.html">財政部統一發票中獎號碼</a>
     ''', result=result)
 
 if __name__ == '__main__':
