@@ -1,6 +1,6 @@
 from flask import Flask, request, render_template_string
 import requests
-from bs4 import BeautifulSoup, TemplateString
+from bs4 import BeautifulSoup
 
 app = Flask(__name__)
 
@@ -10,9 +10,6 @@ def invoice():
     if request.method == 'POST':
         try:
             num = request.form['num'].strip()
-            if not num.isdigit() or len(num) != 8:
-                result = "請輸入有效的 8 位數字發票號碼。"
-                return render_template_string(TemplateString, result=result)  
             url = 'https://invoice.etax.nat.gov.tw/index.html'
             web = requests.get(url, timeout=10)
             web.raise_for_status()
@@ -65,7 +62,6 @@ def invoice():
         <form method="post">
             發票號碼：<input type="text" name="num">
             <input type="submit" value="兌獎">
-        </form>
     ''', result=result)
 
 if __name__ == '__main__':
