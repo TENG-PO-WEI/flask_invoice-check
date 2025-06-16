@@ -62,7 +62,6 @@ def invoice():
         <form method="post">
             發票號碼：<input type="text" name="num">
             <input type="submit" value="兌獎">
-        <from>
     ''', result=result)
 
 if __name__ == '__main__':
